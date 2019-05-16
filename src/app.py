@@ -1,7 +1,7 @@
 ############################################################
 # Version 0.90
-# Date Created: 2019-05-15
-# Last Update:  2019-05-15
+# Date Created: 2019-05-09
+# Last Update:  2019-05-09
 # https://www.jhanley.com
 # Author: John J. Hanley
 #
@@ -26,8 +26,29 @@ logging.basicConfig(format='%(message)s', level=logging.INFO)
 
 app = Flask(__name__)
 
+def handle_proxy_http_to_https():
+	host = request.host
+
+	if ':' in host:
+		host = host.split(':')[0]
+
+	for i in request.headers:
+		if i[0].lower() == 'x-forwarded-proto':
+			if i[1].lower() == 'http':
+				url = 'https://' + host + request.path
+				print('URL:', url)
+				response = redirect(url, 301)
+				print(response)
+
+				return response
+	return None
+
 @app.route('/')
 def home():
+	response = handle_proxy_http_to_https()
+	if response != None:
+		return response
+
 	body = myhtml.build_body_top()
 
 	body += """
@@ -45,6 +66,10 @@ def home():
  
 @app.route('/headers')
 def my_headers():
+	response = handle_proxy_http_to_https()
+	if response != None:
+		return response
+
 	body = myhtml.build_body_top()
 
 	body += myhtml.build_table_top()
