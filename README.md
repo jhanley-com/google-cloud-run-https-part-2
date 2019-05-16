@@ -10,3 +10,4 @@ You will need your Project ID. The following CLI command will display your curre
 Modify env.bat (Windows) or env.sh (Linux) to fit your environment<br />
 <br />
 Execute build.bat (Windows) or build.sh (Linux)<br />
+[![Run on Google Cloud](https://storage.googleapis.com/cloudrun/button.png)](https://console.cloud.google.com/cloudshell/editor?shellonly=true&cloudshell_image=gcr.io/cloudrun/button&cloudshell_git_repo=https://github.com/jhanley-com/google-cloud-run-https-part-2.git)
