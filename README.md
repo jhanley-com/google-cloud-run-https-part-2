@@ -11,4 +11,6 @@ Modify env.bat (Windows) or env.sh (Linux) to fit your environment<br />
 <br />
 Execute build.bat (Windows) or build.sh (Linux)<br />
 <br />
+<!--
 <p><a href="https://console.cloud.google.com/cloudshell/editor?shellonly=true&cloudshell_image=gcr.io/cloudrun/button&cloudshell_git_repo=https://github.com/jhanley-com/google-cloud-run-https-part-2.git" target="_blank"><img src="https://storage.googleapis.com/public.jhanley.com/run_on_google_cloud.png" alt="Run on Google Cloud"></a></p>
+-->
