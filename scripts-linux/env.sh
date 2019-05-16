@@ -1,0 +1,9 @@
+# to get your current Project ID
+# gcloud config list project
+#
+# This scripts uses the Google Cloud Shell for the Project ID
+export PROJECT_ID=$GOOGLE_CLOUD_PROJECT
+#
+export REGION=us-central1
+export SERVICE_NAME=sample-flask-example-2
+export IMAGE_NAME=sample-flask-example-2
